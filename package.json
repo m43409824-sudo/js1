@@ -1,18 +1,14 @@
 {
-  "name": "mukammal-bot",
+  "name": "uzbek-ai-bot",
   "version": "1.0.0",
-  "description": "Mukammal AI Telegram bot",
-  "main": "file.js",
+  "main": "bot.js",
   "type": "module",
   "scripts": {
-    "start": "node file.js"
+    "start": "node bot.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.6.1",
-    "node-telegram-bot-api": "^0.66.0",
-    "openai": "^5.23.0"
+    "dotenv": "^16.3.1",
+    "node-telegram-bot-api": "^0.61.0",
+    "openai": "^4.0.0"
   }
 }
