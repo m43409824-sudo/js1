@@ -1,0 +1,18 @@
+{
+  "name": "mukammal-bot",
+  "version": "1.0.0",
+  "description": "Mukammal AI Telegram bot",
+  "main": "file.js",
+  "type": "module",
+  "scripts": {
+    "start": "node file.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "node-telegram-bot-api": "^0.66.0",
+    "openai": "^5.23.0"
+  }
+}
