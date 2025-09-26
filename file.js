@@ -145,36 +145,3 @@ console.log("✅ Mukammal AI Bot ishga tushdi!");
 
 
 
-import TelegramBot from "node-telegram-bot-api";
-import express from "express";
-import dotenv from "dotenv";
-
-dotenv.config();
-
-const TOKEN = process.env.TELEGRAM_TOKEN;
-const bot = new TelegramBot(TOKEN, { polling: false });
-
-const app = express();
-app.use(express.json());
-
-// Render URL orqali webhook ulash
-const URL = process.env.RENDER_EXTERNAL_URL;
-bot.setWebHook(`${URL}/bot${TOKEN}`);
-
-// Telegram'dan kelgan xabarlarni olish
-app.post(`/bot${TOKEN}`, (req, res) => {
-  bot.processUpdate(req.body);
-  res.sendStatus(200);
-});
-
-// Oddiy javob
-bot.on("message", async (msg) => {
-  const chatId = msg.chat.id;
-  await bot.sendMessage(chatId, `Salom, ${msg.from.first_name}! 🚀 Men Render’da ishlayapman.`);
-});
-
-// Render porti
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`✅ Server ishga tushdi port: ${PORT}`);
-});
